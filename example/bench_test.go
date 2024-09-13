@@ -26,21 +26,25 @@ import (
 )
 
 func BenchmarkLogging(t *testing.B) {
-	os.Remove("output.log")
+	reset()
 	for i := 0; i < t.N; i++ {
 		main()
 	}
 }
 
 func BenchmarkSparseLogging(t *testing.B) {
+	reset()
+	pkglog.InitFromFile("sparse_logging_props.txt")
+	for i := 0; i < t.N; i++ {
+		main()
+	}
+}
+
+func reset() {
 	os.Remove("output.log")
 	a.ResetLogger()
 	b.ResetLogger()
 	c.ResetLogger()
 	d.ResetLogger()
 	e.ResetLogger()
-	pkglog.InitFromFile("sparse_logging_props.txt")
-	for i := 0; i < t.N; i++ {
-		main()
-	}
 }
