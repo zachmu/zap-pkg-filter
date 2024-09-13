@@ -37,6 +37,7 @@ func InitFromFile(configFile string) {
 
 func NewProductionLogger(namespace string) *zap.Logger {
 	config := zap.NewProductionConfig()
+	config.OutputPaths = []string{"output.log"}
 	config.Sampling = nil
 	config.Level = zap.NewAtomicLevelAt(zap.DebugLevel)
 

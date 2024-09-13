@@ -20,6 +20,16 @@ import (
 	"go.uber.org/zap"
 )
 
+var logger *zap.Logger
+
 func getLogger() *zap.Logger {
-	return pkglog.NewProductionLogger("zap-pkg-filter/example/b/d")
+	if logger != nil {
+		return logger
+	}
+	logger = pkglog.NewProductionLogger("zap-pkg-filter/example/b/d")
+	return logger
+}
+
+func ResetLogger() {
+	logger = nil
 }

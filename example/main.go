@@ -29,8 +29,8 @@ func init() {
 
 func main() {
 	a.A()
-	c.C()
 	b.B()
+	c.C()
 	d.D()
 	e.E()
 }

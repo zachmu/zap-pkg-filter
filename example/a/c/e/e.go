@@ -14,9 +14,15 @@
 
 package e
 
+import "os"
+
+var _, skipSync = os.LookupEnv("SKIP_SYNC")
+
 func E() {
 	logger := getLogger()
-	defer logger.Sync()
+	if !skipSync {
+		defer logger.Sync()
+	}
 
 	logger.Debug("debug message from package a/c/e")
 	logger.Info("info message from package a/c/e")
