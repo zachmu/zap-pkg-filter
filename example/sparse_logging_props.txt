@@ -1,0 +1,2 @@
+error:*
+debug,info,warn,error:a/c/e

@@ -1,0 +1,5 @@
+info,warn,error:zap-pkg-filter/example/a
+warn,error:zap-pkg-filter/example/b*
+info,warn,error:zap-pkg-filter/example/a/c
+debug,info,warn,error:zap-pkg-filter/example/a/c/e
+*:zap-pkg-filter/example/b/d
