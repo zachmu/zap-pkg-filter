@@ -1,2 +1,2 @@
 error:*
-debug,info,warn,error:a/c/e
+debug,info,warn,error:zap-pkg-filter/example/a/c/e
